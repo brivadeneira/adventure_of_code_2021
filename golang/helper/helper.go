@@ -18,7 +18,6 @@ func check(e error) {
 // NotEqual tells whether a and b not contain the same elements.
 // A nil argument is equivalent to an empty slice.
 func NotEqual(a, b []int) bool {
-	fmt.Println(a, b)
 	if len(a) != len(b) {
 		return true
 	}
