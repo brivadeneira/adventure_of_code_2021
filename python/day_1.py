@@ -39,4 +39,4 @@ def test_day_1_part_1():
 
 def test_day_1_part_2():
     test_measurements_data_2 = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
-    assert (larger_measurements_counter(get_window_sums(test_measurements_data_2))) == 5
+    assert (get_window_sums(test_measurements_data_2)) == [607, 618, 618, 617, 647, 716, 769, 792, 523, 263]
