@@ -7,9 +7,15 @@ Problems solved using `python`, `golang` and `ruby`
 `3.9`
 
 ```sh
+~$ pip install -r requirements.txt
 ~$ cd python
 python$ python adventure.py
 ``` 
+
+### test
+```sh
+python$ pytest *.py
+```
 
 ## Golang
 `1.17`

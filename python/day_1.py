@@ -14,3 +14,7 @@ def larger_measurements_counter(measurements: list[int]) -> int:
         previous = num
 
     return larger_measurements
+
+def test_day_1():
+    test_measurements_data = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
+    assert larger_measurements_counter(test_measurements_data) == 7
