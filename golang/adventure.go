@@ -1,43 +1,23 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
-	"os"
-	"strconv"
 
 	"github.com/adventure/days"
+	"github.com/adventure/helper"
 )
 
 func main() {
 	fmt.Println("Day 1")
+	m := helper.GetInputFromFile("../input/day1_input.txt")
 
-	m := []int{}
-	file, err := os.Open("../input/day1_input.txt")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
+	c := days.LargerMeasurementsCounter(m)
+	fmt.Println("part 1: ", c)
 
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		s := scanner.Text()
-		n, err := strconv.Atoi(s)
+	m2 := helper.GetInputFromFile("../input/day1_2_input.txt")
+	w := days.GetWindowSums(m2)
+	c2 := days.LargerMeasurementsCounter(w)
 
-		if err != nil {
-			// handle error
-			fmt.Println(err)
-			os.Exit(2)
-		}
+	fmt.Println("part 2: ", c2)
 
-		m = append(m, n)
-	}
-
-	if err := scanner.Err(); err != nil {
-		log.Fatal(err)
-	}
-
-	counter := days.LargerMeasurementsCounter(m)
-	fmt.Println(counter)
 }
