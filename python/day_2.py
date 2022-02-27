@@ -27,7 +27,7 @@ def get_position_product(instructions: list[str]) -> float:
     return horizontal_position * depth
 
 
-def test_day_2_part_1():
+def test_day_2_part_1() -> None:
     test_instructions_data = ['forward 5', 'down 5', 'forward 8', 'up 3', 'down 8', 'forward 2']
     assert get_position_product(test_instructions_data) == 10 * 15
 
