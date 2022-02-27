@@ -18,6 +18,21 @@ class DayOne
 
         return counter
     end
+
+    def self.get_window_sums(measurements)
+        ##
+        # Returns a list with window sums
+        # accordint to part 2 of https://adventofcode.com/2021/day/1
+        win_sums = []
+        measurements.each_with_index { | _, i |
+            win_sum = 0
+            measurements[i,3].each { |n|
+                win_sum += n
+            }
+            win_sums.append(win_sum)
+        }
+        return win_sums
+    end
 end
 
 
