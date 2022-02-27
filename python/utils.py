@@ -1,9 +1,11 @@
-def get_input_from_file(file_path: str) -> list[int]:
+def get_input_from_file(file_path: str, to_int: bool = False) -> list:
     """
     Returns a list according to an input file
     :param file_path: (str) input file data
-    :return: (list of ints) with input data
+    :return: (list) with input data
     """
     with open(file_path) as f:
-        input = [int(line) for line in f.readlines()]
-        return input
+        if to_int:
+            return [int(line) for line in f.readlines()]
+        else:
+            return [line for line in f.readlines()]
