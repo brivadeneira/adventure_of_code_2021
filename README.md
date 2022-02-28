@@ -9,7 +9,7 @@ Problems solved using `python`, `golang` and `ruby`
 ```sh
 ~$ pip install -r requirements.txt
 ~$ cd python
-python$ python adventure.py
+python$ python day_x.py  # where x is the number of day e.g. 1
 ``` 
 
 ### test
