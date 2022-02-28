@@ -30,7 +30,7 @@ func NotEqual(a, b []int) bool {
 }
 
 // Read a serie of integers from a given file path
-func GetInputFromFile(path string) []int {
+func GetIntInputFromFile(path string) []int {
 	m := []int{}
 	file, err := os.Open(path)
 	if err != nil {
@@ -50,6 +50,29 @@ func GetInputFromFile(path string) []int {
 		}
 
 		m = append(m, n)
+	}
+
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	return m
+}
+
+// Read a serie of strings from a given file path
+func GetStrInputFromFile(path string) []string {
+	m := []string{}
+	file, err := os.Open(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		s := scanner.Text()
+
+		m = append(m, s)
 	}
 
 	if err := scanner.Err(); err != nil {
