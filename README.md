@@ -21,7 +21,7 @@ python$ pytest *.py
 `1.17`
 ```sh
 ~$ cd golang
-golang$ go run 
+golang$ go run day_x.go  # where x is the number of day e.g. 1
 ``` 
 
 ### test
@@ -35,7 +35,7 @@ golang$ go test -cover ./...
 
 ```sh
 ~$ cd ruby
-ruby$ ruby adventure.rb 
+ruby$ ruby day_x.rb  # where x is the number of day e.g. 1
 ``` 
 
 ### test

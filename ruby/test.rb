@@ -16,5 +16,6 @@ class TestDayTwo < Test::Unit::TestCase
     def test_day_two
         instructions = ["forward 5", "down 5", "forward 8", "up 3", "down 8", "forward 2"]
         assert_equal(10 * 15, DayTwo.get_position_product(instructions))
+        assert_equal(15 * 60, DayTwo.get_position_product_with_aim(instructions))
     end
 end

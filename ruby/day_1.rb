@@ -1,3 +1,5 @@
+require_relative "utils.rb"
+
 ##
 # This class has the method needed for the day one of adventure of code 2011.
 
@@ -36,3 +38,15 @@ class DayOne
 end
 
 
+utils = Utils
+
+# day 1
+
+puts "Day one"
+measurements = Utils.get_input_from_file("../input/day1_input.txt", true)
+day_one = DayOne
+puts "part 1: ", day_one.larger_measurements_counter(measurements)
+
+measurements_2 = Utils.get_input_from_file("../input/day1_2_input.txt", true)
+window_measurement = day_one.get_window_sums(measurements_2)
+puts "part 2: ", day_one.larger_measurements_counter(window_measurement)
