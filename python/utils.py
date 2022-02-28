@@ -14,4 +14,4 @@ def get_input_from_file(file_path: str, to_int: bool = False) -> InputType:
         if to_int:
             return [int(line) for line in f.readlines()]
         else:
-            return [line for line in f.readlines()]
+            return [line.replace('\n', '') for line in f.readlines()]
