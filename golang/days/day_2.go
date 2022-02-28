@@ -26,3 +26,27 @@ func GetPositionProduct(instructions []string) int {
 	}
 	return hPosition * depth
 }
+
+// Returns the product of horizontal position and depth
+// from string instructions
+// according to part2 of https://adventofcode.com/2021/day/2
+func GetPositionProductWithAim(instructions []string) int {
+	hPosition, depth := 0, 0
+	aim := 0
+	for _, instruction := range instructions {
+		xStr := strings.Split(instruction, " ")[1]
+		x, _ := strconv.Atoi(xStr)
+
+		if strings.Contains(instruction, "forward") {
+			hPosition += x
+			depth += aim * x
+		} else {
+			if strings.Contains(instruction, "up") {
+				aim -= x
+			} else {
+				aim += x
+			}
+		}
+	}
+	return hPosition * depth
+}
